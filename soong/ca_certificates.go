@@ -45,7 +45,7 @@ func caCertificatesLoadHook(
 		etcProps.Src = proptools.StringPtr(path.Join(*c.Src_dir, filename))
 		etcProps.Sub_dir = c.Dest_dir
 		etcProps.Filename = proptools.StringPtr(filename)
-		ctx.CreateModule(factory, &etcProps)
+		ctx.CreateModule(android.ModuleFactoryAdaptor(factory), &etcProps)
 
 		// Add it to the required module list of the parent phony rule.
 		requiredModuleNames[i] = moduleName
