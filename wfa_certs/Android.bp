@@ -25,16 +25,8 @@ package {
     default_applicable_licenses: ["system_ca-certificates_license"],
 }
 
-ca_certificates {
+prebuilt_etc {
     name: "cacerts_wfa",
-    src_dir: "files",
-    dest_dir: "security/cacerts_wfa",
-    module_name_prefix: "target-cacert-wifi-",
-}
-
-ca_certificates_host {
-    name: "cacerts_wfa-host",
-    src_dir: "files",
-    dest_dir: "security/cacerts_wfa",
-    module_name_prefix: "host-cacert-wifi-",
+    srcs: ["files/*"],
+    sub_dir: "security/cacerts_wfa",
 }

@@ -29,16 +29,8 @@ license {
     license_text: [],
 }
 
-ca_certificates {
+prebuilt_etc {
     name: "cacerts",
-    src_dir: "files",
-    dest_dir: "security/cacerts",
-    module_name_prefix: "target-cacert-",
-}
-
-ca_certificates_host {
-    name: "cacerts-host",
-    src_dir: "files",
-    dest_dir: "security/cacerts",
-    module_name_prefix: "host-cacert-",
+    srcs: ["files/*"],
+    sub_dir: "security/cacerts",
 }
